@@ -14,11 +14,11 @@ class LongestSubstringKDistinct {
 
     while(windowEnd!=str.length()){
     	char rightChar = str.charAt(windowEnd);
-    	charFrequencyMap.put(rightChar,charFrequencyMap.getOrDefault(rightChar,0)+1);
+    	charFrequencyMap.push(rightChar,charFrequencyMap.getOrDefault(rightChar,0)+1);
       
     	while(charFrequencyMap.size()>k){
     		char leftChar = str.charAt(windowStart);
-    		charFrequencyMap.put(leftChar,charFrequencyMap.getOrDefault(leftChar,0)-1);
+    		charFrequencyMap.push(leftChar,charFrequencyMap.getOrDefault(leftChar,0)-1);
     		if(charFrequencyMap.get(leftChar)==0)	charFrequencyMap.remove(leftChar);
         windowStart++;
     	}
